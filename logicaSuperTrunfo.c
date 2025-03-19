@@ -201,17 +201,5 @@ default:
     printf("Opção invalida, escola opção de 1 a 6.");
     break;
 }
-
-
-
-
-
-
-
-
-
-
-
-
     return 0;
 }
