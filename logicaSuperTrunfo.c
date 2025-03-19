@@ -16,6 +16,7 @@ int main() {
     int pontos_turisticosA, pontos_turisticosB;
     float densidade_Demografica1 , densidade_Demografica2;
     float percapita1 , percapita2 ;
+    int duelo;
 
 // PREENCHIMENTO DE CADASTRO CARTA 1.
 
@@ -69,7 +70,7 @@ int main() {
     printf("Codigo: %s\n", codigo_cartaA);
     printf("Cidade: %s\n", cidadeA);
     printf("População: %d\n", populacaoA);
-    printf("Area km: %.1f\n", areaA);
+    printf("Area km: %.2f\n", areaA);
     printf("Densidade demografica: %.1f\n", densidade_Demografica1);
     printf("PIB: %.3f\n", pibA);
     printf("Pib per capita: %.3f\n", percapita1);
@@ -83,7 +84,7 @@ int main() {
     printf("Codigo: %s\n", codigo_cartaB);
     printf("Cidade: %s\n", cidadeB);
     printf("População: %d\n", populacaoB);
-    printf("Area km: %.1f\n", areaB);
+    printf("Area km: %.2f\n", areaB);
     printf("Densidade demografica: %.1f\n", densidade_Demografica2);
     printf("PIB: %.3f\n", pibB);
     printf("Pib per capita: %.3f\n", percapita2);
@@ -103,8 +104,103 @@ int main() {
 //- **Menu Interativo:** Uso de `switch` para criar um menu que permite ao jogador escolher os atributos a serem comparados.
 //- **Exibição de Resultados:** O sistema exibirá o resultado da comparação, indicando qual carta venceu e qual atributo foi utilizado.
 
-printf("Agora defina qal atributo deseja realizar o combate entre as cartas: \n 1- População \n 2- Area \n 3- Densidade demografica\n 4- Pib \n 5- Pib per Capita \n 6- Pontos turisticos \n");
+// MENUS INTERATIVOS PARA SELEÇÃO DE DUELOS
 
+printf("Agora defina qual atributo deseja realizar o combate entre as cartas: \n 1- População \n 2- Area \n 3- Densidade demografica\n 4- Pib \n 5- Pib per Capita \n 6- Pontos turisticos \n");
+scanf("%d", &duelo);
+
+switch (duelo)
+{
+case 1:
+    printf("Voce escolheu duelo de População vence a carta com maior atributo *-* \n");
+    printf("Carta de %s possui: %d em População -- Carta de %s possui: %d em População \n", cidadeA , populacaoA , cidadeB, populacaoB);
+    if (populacaoA > populacaoB)
+    {
+        printf("Resultado: Carta %s é a vencedora, possui população maior que a carta adversaria.\n", cidadeA);
+    } else if (populacaoA < populacaoB)
+    {
+        printf("Resultado: Carta %s é a vencedora, possui população maior que a carta adversaria.\n", cidadeB);
+    } else
+    {
+        printf("Resultado: Tivemos um Empate.\n");
+    }
+
+    break;
+case 2:
+printf("Voce escolheu duelo de de Area km: vence a carta com maior atributo *-* \n");
+printf("Carta de %s possui: %.2f em Area km -- Carta de %s possui: %.2f em Area km \n", cidadeA , areaA , cidadeB, areaB);
+if (areaA > areaB)
+{
+    printf("Resultado: Carta %s é a vencedora, possui Area km maior que a carta adversaria.\n", cidadeA);
+} else if (areaA < areaB)
+{
+    printf("Resultado: Carta %s é a vencedora, possui Area km maior que a carta adversaria.\n", cidadeB);
+} else
+{
+    printf("Resultado: Tivemos um Empate.\n");
+}
+    break;
+case 3:
+printf("Voce escolheu duelo de Densidade Demografica Vence a carta com Menor atributo *-* \n");
+printf("Carta de %s possui: %.1f em Densidade Demografica -- Carta de %s possui: %.1f em Densidade Demografica \n", cidadeA , densidade_Demografica1 , cidadeB, densidade_Demografica2);
+if (densidade_Demografica1 < densidade_Demografica2)
+{
+    printf("Resultado: Carta %s é a vencedora, possui Densidade Demografica Menor que a carta adversaria.\n", cidadeA);
+} else if (densidade_Demografica1 > densidade_Demografica2)
+{
+    printf("Resultado: Carta %s é a vencedora, possui Densidade Demografica que a carta adversaria.\n", cidadeB);
+} else
+{
+    printf("Resultado: Tivemos um Empate.\n");
+}
+    break;
+case 4:
+printf("Voce escolheu duelo de Densidade Demografica Vence a carta com Maior atributo *-* \n");
+printf("Carta de %s possui: %.3f BI em Pib -- Carta de %s possui: %.3f BI em Pib \n", cidadeA , pibA , cidadeB, pibB);
+if (pibA > pibB)
+{
+    printf("Resultado: Carta %s é a vencedora, possui PIB Maior que a carta adversaria.\n", cidadeA);
+} else if (pibA < pibB)
+{
+    printf("Resultado: Carta %s é a vencedora, possui PIB Maior que a carta adversaria.\n", cidadeB);
+} else
+{
+    printf("Resultado: Tivemos um Empate.\n");
+}
+    break;
+case 5:
+printf("Voce escolheu duelo de Pib per Capita Vence a carta com Maior atributo *-* \n");
+printf("Carta de %s possui: %.3f em Pib -- Carta de %s possui: %.3f em Pib \n", cidadeA , percapita1 , cidadeB, percapita2);
+if (percapita1 > percapita2)
+{
+    printf("Resultado: Carta %s é a vencedora, possui PIB per Capita Maior que a carta adversaria.\n", cidadeA);
+} else if (percapita1 < percapita2)
+{
+    printf("Resultado: Carta %s é a vencedora, possui PIB per Capita Maior que a carta adversaria.\n", cidadeB);
+} else 
+{
+    printf("Resultado: Tivemos um Empate.\n");
+}
+    break;
+case 6:
+printf("Voce escolheu duelo de Pontos Turisticos Vence a carta com Maior atributo *-* \n");
+printf("Carta de %s possui: %d em Pontos Turisticos -- Carta de %s possui: %.d em Pontos Turisticos \n", cidadeA , pontos_turisticosA , cidadeB, pontos_turisticosB);
+if (pontos_turisticosA > pontos_turisticosB)
+{
+    printf("Resultado: Carta %s é a vencedora, possui Pontos Turisticos Maior que a carta adversaria.\n", cidadeA);
+} else if (pontos_turisticosA < pontos_turisticosB)
+{
+    printf("Resultado: Carta %s é a vencedora, possui Pontos Turisticos Maior que a carta adversaria.\n", cidadeB);
+} else 
+{
+    printf("Resultado: Tivemos um Empate.\n");
+}
+    break;
+
+default:
+    printf("Opção invalida, escola opção de 1 a 6.");
+    break;
+}
 
 
 
@@ -119,19 +215,3 @@ printf("Agora defina qal atributo deseja realizar o combate entre as cartas: \n 
 
     return 0;
 }
-
-
-
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
-
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
-
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
