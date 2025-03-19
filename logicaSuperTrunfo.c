@@ -8,12 +8,14 @@
 int main() {
     // Definição das variáveis para armazenar as propriedades das cidades
     char estadoA , estadoB;
-    char codigo_cartaA[3] , codigo_cartaB[3];
-    char cidadeA[10], cidadeB[10];
+    char codigo_cartaA[4] , codigo_cartaB[4];
+    char cidadeA[20], cidadeB[20];
     int populacaoA, populacaoB;
     float areaA, areaB;
     float pibA, pibB;
     int pontos_turisticosA, pontos_turisticosB;
+    float densidade_Demografica1 , densidade_Demografica2;
+    float percapita1 , percapita2 ;
 
 // PREENCHIMENTO DE CADASTRO CARTA 1.
 
@@ -53,6 +55,13 @@ int main() {
     scanf(" %d", &pontos_turisticosB);
     printf("\n\n");
 
+    //CALUCULOS DE ATRIBUTOS DENSIDADE POPULACIONAL E PIB PER CAPITA
+    densidade_Demografica1 =  (float) populacaoA / areaA ;
+    percapita1 = ( float) pibA / populacaoA ;
+    densidade_Demografica2 =  (float) populacaoB / areaB ;
+    percapita2 = ( float) pibB / populacaoB ;
+
+
     // IMPRESSAO DE DADOS DE CADA CARTA 1
 
     printf("CARTA 1\n");
@@ -60,9 +69,11 @@ int main() {
     printf("Codigo: %s\n", codigo_cartaA);
     printf("Cidade: %s\n", cidadeA);
     printf("População: %d\n", populacaoA);
-    printf("Area km: %f\n", areaA);
-    printf("PIB: %f\n", pibA);
-    printf("Pontos Turisticos: %d", pontos_turisticosA);
+    printf("Area km: %.1f\n", areaA);
+    printf("Densidade demografica: %.1f\n", densidade_Demografica1);
+    printf("PIB: %.3f\n", pibA);
+    printf("Pib per capita: %.3f\n", percapita1);
+    printf("Pontos Turisticos: %d\n", pontos_turisticosA);
     printf("\n");
 
     // IMPRESSAO DE DADOS DE CADA CARTA 2
@@ -72,16 +83,44 @@ int main() {
     printf("Codigo: %s\n", codigo_cartaB);
     printf("Cidade: %s\n", cidadeB);
     printf("População: %d\n", populacaoB);
-    printf("Area km: %f\n", areaB);
-    printf("PIB: %f\n", pibB);
+    printf("Area km: %.1f\n", areaB);
+    printf("Densidade demografica: %.1f\n", densidade_Demografica2);
+    printf("PIB: %.3f\n", pibB);
+    printf("Pib per capita: %.3f\n", percapita2);
     printf("Pontos Turisticos: %d\n", pontos_turisticosB);
+    printf("\n");
+    
+    //## 🏅 Nível Aventureiro
+
+//No nível Aventureiro, você expandirá o sistema para incluir a comparação aninhada e a criação de um menu interativo usando `switch`.
+
+//### 🆕 Diferença em relação ao Nível Novato:
+//- **Menu Interativo:** O usuário poderá escolher diferentes atributos para comparação através de um menu.
+//- **Comparação Aninhada:** Implementação de lógica de comparação mais complexa, utilizando estruturas aninhadas para tomar decisões baseadas em múltiplos atributos.
+
+//### 🚩 Novas Funcionalidades:
+//- **Cadastro de Cartas:** Similar ao nível Novato, com a adição de comparação de múltiplos atributos.
+//- **Menu Interativo:** Uso de `switch` para criar um menu que permite ao jogador escolher os atributos a serem comparados.
+//- **Exibição de Resultados:** O sistema exibirá o resultado da comparação, indicando qual carta venceu e qual atributo foi utilizado.
+
+printf("Agora defina qal atributo deseja realizar o combate entre as cartas: \n 1- População \n 2- Area \n 3- Densidade demografica\n 4- Pib \n 5- Pib per Capita \n 6- Pontos turisticos \n");
+
+
+
+
+
+
+
+
+
+
+
+
 
     return 0;
 }
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+
 
     // Exemplo:
     // if (populacaoA > populacaoB) {
