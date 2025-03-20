@@ -1,5 +1,10 @@
 {
     "githubPullRequests.ignoredPullRequestBranches": [
         "main"
-    ]
+    ],
+    "files.associations": {
+        "operadorternário.C": "cpp",
+        "operadorternario.C": "cpp",
+        "operadorternario1.C": "cpp"
+    }
 }
